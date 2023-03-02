@@ -8,6 +8,8 @@ import {
   generateEditedImage,
   generateImageVariations,
 } from "./images";
+import { getEmbeddings } from "./embedding";
+import { checkModeration } from "./moderations";
 
 async function main() {
   try {
@@ -46,6 +48,13 @@ async function main() {
 
     // Generate image variations
     await generateImageVariations("./content/otter_new.png", 2, "1024x1024");
+
+    // Get embeddings
+    await getEmbeddings("The food was delicious and the waiter...", "text-embedding-ada-002");
+
+    // Check moderation
+    // await checkModeration("I want to kill them.");
+
   } catch (error) {
     console.error(error);
   }

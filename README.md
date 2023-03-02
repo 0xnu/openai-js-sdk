@@ -152,6 +152,54 @@ async function main() {
 main();
 ```
 
+You can call the `getEmbeddings` function from `embedding.ts` to embed a text input using the ADA model.
+
+```js
+import { openaiAuth } from "./authentication";
+import { getEmbeddings } from "./embedding";
+
+async function main() {
+  try {
+    // Get embeddings
+    await getEmbeddings("The food was delicious and the waiter...", "text-embedding-ada-002");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Set the authentication headers for all requests
+openaiAuth.interceptors.request.use((config) => {
+  console.log("Making request with headers:", config.headers);
+  return config;
+});
+
+main();
+```
+
+You can call the `checkModeration` function from `moderations.ts` to check if a text input contains any toxic or spam content.
+
+```js
+import { openaiAuth } from "./authentication";
+import { checkModeration } from "./moderations";
+
+async function main() {
+  try {
+    // Check moderation
+    await checkModeration("I want to kill them."); // watch your language! do not kill anyone! :-)
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Set the authentication headers for all requests
+openaiAuth.interceptors.request.use((config) => {
+  console.log("Making request with headers:", config.headers);
+  return config;
+});
+
+main();
+```
+
 Note that before running any of these functions, you will need to create an OpenAI account. To do this, you can click on this [link](https://openai.com).
 
 ### Contribute
