@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_KEY = "<your-api-key>";
-const ORG_ID = "<your-organization-id>";
+export const API_KEY = "<your-api-key>";
+export const ORG_ID = "<your-organization-id>";
 
 const headers = {
   Authorization: `Bearer ${API_KEY}`,
@@ -11,4 +11,3 @@ const headers = {
 export const openaiAuth = axios.create({
   headers,
 });
-
