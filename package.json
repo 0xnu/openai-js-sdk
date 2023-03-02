@@ -1,0 +1,30 @@
+{
+    "name": "openai-js-sdk",
+    "version": "1.0.0",
+    "description": "A TypeScript SDK for the OpenAI API.",
+    "main": "index.ts",
+    "scripts": {
+        "start": "ts-node index.ts",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/0xnu/openai-js-sdk.git"
+    },
+    "keywords": [
+        "openai",
+        "sdk",
+        "typescript",
+        "opensource"
+    ],
+    "author": "Finbarrs Oketunji",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.21.4",
+        "ts-node": "^10.9.1"
+    },
+    "devDependencies": {
+        "@types/node": "^16.13.1",
+        "typescript": "^4.5.4"
+    }
+}
