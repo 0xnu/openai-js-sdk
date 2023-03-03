@@ -1,6 +1,6 @@
 {
     "name": "openai-js-sdk",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "A TypeScript SDK for the OpenAI API.",
     "main": "index.ts",
     "scripts": {
@@ -21,6 +21,7 @@
     "license": "MIT",
     "dependencies": {
         "axios": "^0.21.4",
+        "form-data": "^4.0.0",
         "ts-node": "^10.9.1"
     },
     "devDependencies": {

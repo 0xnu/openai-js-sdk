@@ -11,6 +11,7 @@ import {
 import { getEmbeddings } from "./src/embedding";
 import { checkModeration } from "./src/moderations";
 import { transcribeAudio, translateAudio } from "./src/audio";
+import { getFiles, uploadFile, deleteFile, getFile } from "./src/files";
 
 async function main() {
   try {
@@ -36,31 +37,43 @@ async function main() {
     );
 
     // Generate an image
-    // await generateImage("A cute baby sea otter", 2, "1024x1024");
+    await generateImage("A cute baby sea otter", 2, "1024x1024");
 
     // Generate an edited image
-    // await generateEditedImage(
-    //   "./content/otter.png",
-    //   "./content/mask.png",
-    //   "A cute baby sea otter wearing a beret",
-    //   2,
-    //   "1024x1024"
-    // );
+    await generateEditedImage(
+      "./content/otter.png",
+      "./content/mask.png",
+      "A cute baby sea otter wearing a beret",
+      2,
+      "1024x1024"
+    );
 
     // Generate image variations
-    // await generateImageVariations("./content/otter_new.png", 2, "1024x1024");
+    await generateImageVariations("./content/otter_new.png", 2, "1024x1024");
 
     // Get embeddings
-    // await getEmbeddings("The food was delicious and the waiter...", "text-embedding-ada-002");
+    await getEmbeddings("The food was delicious and the waiter...", "text-embedding-ada-002");
 
     // Check moderation
-    // await checkModeration("I want to kill them.");
+    await checkModeration("I want to kill them.");
 
     // Transcribe audio
-    // await transcribeAudio("./content/steve_jobs_courage.mp3", "whisper-1");
+    await transcribeAudio("./content/steve_jobs_courage.mp3", "whisper-1");
 
     // Translate audio
-    // await translateAudio("./content/german.mp3", "whisper-1");   
+    await translateAudio("./content/german.mp3", "whisper-1");   
+
+    // Get files
+    await getFiles();
+
+    // Upload a file
+    await uploadFile("./content/mydata.jsonl");
+
+    // Get a file
+    await getFile("file-XjGxS3KTG0uNmNOK362iJua3");
+
+    // Delete a file
+    await deleteFile("file-XjGxS3KTG0uNmNOK362iJua3");
 
   } catch (error) {
     console.error(error);
