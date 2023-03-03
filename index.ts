@@ -12,6 +12,14 @@ import { getEmbeddings } from "./src/embedding";
 import { checkModeration } from "./src/moderations";
 import { transcribeAudio, translateAudio } from "./src/audio";
 import { getFiles, uploadFile, deleteFile, getFile } from "./src/files";
+import { 
+  createFineTune,
+  getFineTunes,
+  getFineTune,
+  cancelFineTune,
+  getFineTuneEvents,
+  deleteModel
+} from "./src/finetunes";
 
 async function main() {
   try {
@@ -75,6 +83,25 @@ async function main() {
     // Delete a file
     await deleteFile("file-XjGxS3KTG0uNmNOK362iJua3");
 
+    // create fine-tune
+    const fineTune = await createFineTune("./content/training_file.txt");
+
+    // get list of fine-tunes
+    const fineTunes = await getFineTunes();
+
+    // get details of a specific fine-tune
+    const fineTuneId = fineTunes[0].id;
+    const fineTuneDetails = await getFineTune(fineTuneId);
+
+    // cancel a fine-tune
+    await cancelFineTune(fineTuneId);
+
+    // get events for a fine-tune
+    const fineTuneEvents = await getFineTuneEvents(fineTuneId);
+
+    // delete a model
+    const modelId = "model-ABC";
+    const deleteResult = await deleteModel(modelId);
   } catch (error) {
     console.error(error);
   }
