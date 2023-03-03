@@ -1,6 +1,6 @@
 {
     "name": "openai-js-sdk",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A TypeScript SDK for the OpenAI API.",
     "main": "index.ts",
     "scripts": {

@@ -1,5 +1,4 @@
 dist/
-src/
 push.sh
 node_modules/
 package-lock.json
