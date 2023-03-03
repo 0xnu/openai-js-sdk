@@ -200,6 +200,43 @@ openaiAuth.interceptors.request.use((config) => {
 main();
 ```
 
+The `transcribeAudio` function is called with the file path `./content/audio.mp3` and the model string `"whisper-1"`. Make sure to replace these placeholders with your actual file path and model string.
+
+```js
+import { openaiAuth } from "./authentication";
+import { transcribeAudio } from "./audio";
+
+async function main() {
+  try {
+    // Transcribe audio
+    await transcribeAudio("./content/audio.mp3", "whisper-1");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+main();
+```
+
+The `translateAudio` function is called with the file path `./content/german.m4a` and the model string `"whisper-1"`.
+
+```js
+import { openaiAuth } from "./authentication";
+import { translateAudio } from "./audio";
+
+async function main() {
+  try {
+    // Translate audio
+    await translateAudio("./content/german.m4a", "whisper-1");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+main();
+```
+
+
 Note that before running any of these functions, you will need to create an OpenAI account. To do this, you can click on this [link](https://openai.com).
 
 ### Contribute
