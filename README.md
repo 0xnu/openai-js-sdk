@@ -1,5 +1,14 @@
 ## OpenAI API JS SDK
 
+![GitHub top language](https://img.shields.io/github/languages/top/0xnu/openai-js-sdk)
+![Snyk Vulnerabilities for npm scoped package](https://img.shields.io/snyk/vulnerabilities/npm/coronavirusapi-wrapper)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/0xnu/openai-js-sdk)
+![GitHub last commit](https://img.shields.io/github/last-commit/0xnu/openai-js-sdk)<br>
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/coronavirusapi-wrapper)
+![npm](https://img.shields.io/npm/dw/openai-js-sdk)
+![GitHub issues](https://img.shields.io/github/issues-raw/0xnu/openai-js-sdk)
+![License](https://img.shields.io/github/license/0xnu/openai-js-sdk)
+
 Applications written in [Javascript](https://www.javascript.com/) and [Typescript](https://www.typescriptlang.org/) can easily access [OpenAI API](https://platform.openai.com/docs/introduction).
 
 ### Installation
